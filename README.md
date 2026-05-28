@@ -17,5 +17,5 @@ Acesta este un proiect de semestru la materia Programare Web care demonstrează 
 
 ## 🚀 Instalare și Rulare Locală
 1. Clonează acest repository:
-```bash
-   git clone [https://github.com/iiuliaa/nume-repo-aici.git](https://github.com/iiuliaa/nume-repo-aici.git)
+   ```bash
+   git clone [https://github.com/iiuliaa/Proiect-WEB-laborator.git](https://github.com/iiuliaa/Proiect-WEB-laborator.git)
