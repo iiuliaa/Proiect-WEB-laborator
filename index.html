@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu Web - Preda Iulia</title>
+    <!-- Aici vom lega fișierul CSS imediat -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SECȚIUNEA PROFIL -->
+    <header class="profile-section">
+        <!-- Notă: Pentru a-ți apărea poza, trebuie să pui o poză cu tine în folder și să o numești "poza-profil.jpg" -->
+        <img src="poza-profil.jpg" alt="Poza de profil a Iuliei" class="profile-pic" id="profile-pic">
+        <h1 id="my-name">Preda Iulia-Maria-Simina</h1>
+        <h2 id="my-role">Studentă Ingineria Calculatoarelor | Tehnologii: C++, C#, Java, HTML, CSS</h2>
+        <p class="description">Sunt studentă în anul II la Ingineria Calculatoarelor, cu un interes puternic pentru
+            programare și o dorință constantă de a învăța. Sunt pasionată de rezolvarea problemelor, gândirea creativă
+            și adaptarea la noile tehnologii. Pe lângă IT, am o pasiune pentru fotografie, care îmi permite să explorez
+            creativitatea dintr-o altă perspectivă.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- EDUCAȚIE ȘI EXPERIENȚĂ -->
+        <section class="info-section">
+            <div class="box">
+                <h3>💼 Experiență de muncă & Voluntariat</h3>
+                <ul>
+                    <li><strong>Instructor de Robotică (After-School)</strong><br> Logiscool Sibiu | Sept 2024 - Nov
+                        2024<br>
+                        <small>Am susținut sesiuni interactive pentru copii, ghidându-i în construirea și programarea
+                            roboților mici.</small>
+                    </li>
+                    <br>
+                    <li><strong>Voluntar</strong><br> WeHelp Sibiu | Sept 2022 - Iun 2023<br>
+                        <small>Am sprijinit copiii la teme și i-am implicat în activități educaționale și
+                            creative.</small>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>🎓 Educație & Certificări</h3>
+                <ul>
+                    <li><strong>Facultatea de Inginerie (Calculatoare)</strong><br> Universitatea "Lucian Blaga" Sibiu |
+                        Oct 2024 - Prezent<br>
+                        <small>Studentă în anul 2, Grupa 22/1.</small>
+                    </li>
+                    <br>
+                    <li><strong>Certificare Microsoft Azure Fundamentals</strong><br> Colegiul Național „Octavian Goga"
+                        | Iun 2022<br>
+                        <small>Certificare ce atestă înțelegerea conceptelor de bază despre cloud, servicii Azure și
+                            securitate.</small>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECȚIUNEA PORTOFOLIU (Aici vine integrarea GitHub) -->
+        <section class="portfolio-section">
+            <h2>🚀 Proiectele Mele (GitHub)</h2>
+
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="Caută proiect după nume sau limbaj (ex: C#, Java)...">
+            </div>
+
+            <div id="loading-spinner" class="spinner"></div>
+            <div id="error-message" class="error-msg" style="display: none;"></div>
+
+            <!-- Aici vor apărea cardurile cu proiecte generate de JavaScript -->
+            <div id="repo-container" class="grid-container"></div>
+        </section>
+
+    </main>
+
+    <!-- Aici vom lega fișierul JavaScript mai târziu -->
+    <script src="script.js"></script>
+</body>
+
+</html>

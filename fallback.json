@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Blackjack-Project-OOP",
+        "description": "Joc de cărți complet funcțional dezvoltat în C# și Windows Forms, folosind conceptele de Programare Orientată pe Obiecte (OOP).",
+        "language": "C#",
+        "stargazers_count": 2,
+        "forks_count": 0,
+        "html_url": "https://github.com/iiuliaa/Blackjack-Project-OOP",
+        "fork": false,
+        "updated_at": "2026-05-15T10:00:00Z"
+    },
+    {
+        "name": "Automotive-ECU-Simulation",
+        "description": "Simulare de procese și arhitectură auto distribuită folosind plăci NXP.",
+        "language": "C++",
+        "stargazers_count": 5,
+        "forks_count": 1,
+        "html_url": "https://github.com/iiuliaa",
+        "fork": false,
+        "updated_at": "2026-04-20T12:30:00Z"
+    },
+    {
+        "name": "Robotics-Controller",
+        "description": "Scripturi pentru microcontrolere utilizate în proiecte educaționale de robotică.",
+        "language": "C++",
+        "stargazers_count": 3,
+        "forks_count": 0,
+        "html_url": "https://github.com/iiuliaa",
+        "fork": false,
+        "updated_at": "2026-03-10T09:15:00Z"
+    },
+    {
+        "name": "Portofoliu-Web-Personal",
+        "description": "Portofoliu creat cu HTML, CSS și Vanilla JavaScript care integrează GitHub API.",
+        "language": "JavaScript",
+        "stargazers_count": 1,
+        "forks_count": 0,
+        "html_url": "https://github.com/iiuliaa",
+        "fork": false,
+        "updated_at": "2026-05-28T14:00:00Z"
+    },
+    {
+        "name": "Java-Algorithms-Practice",
+        "description": "Colecție de algoritmi și structuri de date implementate în Java.",
+        "language": "Java",
+        "stargazers_count": 4,
+        "forks_count": 2,
+        "html_url": "https://github.com/iiuliaa",
+        "fork": false,
+        "updated_at": "2026-01-05T16:45:00Z"
+    }
+]
