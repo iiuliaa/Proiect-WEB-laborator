@@ -1,24 +1,24 @@
-// Setăm username-ul tău real de GitHub
+// Setarea username-ului
 const GITHUB_USERNAME = 'iiuliaa';
 const API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
 
-// Luăm elementele din HTML cu care vom interacționa
+// Iau elementele din HTML cu care interactionez
 const repoContainer = document.getElementById('repo-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 const errorMessage = document.getElementById('error-message');
 const searchInput = document.getElementById('search-input');
 
-let allProjects = []; // Aici vom păstra toate proiectele pentru a le putea căuta/filtra
+let allProjects = []; // Salvarea permanenta a proiectelor descarcate
 
-// Funcția care aduce datele de pe GitHub
+// Functie care aduce datele de pe GitHub
 async function fetchProjects() {
     try {
-        // Arătăm spinner-ul de încărcare (Cerință Medie: UX)
+        // afisez spinner-ul de incarcare 
         loadingSpinner.style.display = 'block';
         repoContainer.innerHTML = '';
         errorMessage.style.display = 'none';
 
-        // Facem cererea asincronă către GitHub (Cerință Obligatorie)
+        // cerere asincrona catre api
         const response = await fetch(API_URL);
 
         if (!response.ok) {
@@ -27,24 +27,24 @@ async function fetchProjects() {
 
         let repos = await response.json();
 
-        // Excludem proiectele care sunt Fork-uri (Cerință Medie)
-        repos = repos.filter(repo => repo.fork === false);
+        // excluderea proiectelor care sunt fork-uri
+        repos = repos.filter(repo => repo.fork === false && repo.name !== 'Proiect-WEB-laborator');
 
-        // Dacă ai mai puțin de 5 proiecte, folosim datele de rezervă (Nota din cerință)
+        // pt mai putin de 5 proiecte, folosim datele de rezerva
         if (repos.length < 5) {
             displayError("Notă: Sunt mai puțin de 5 proiecte pe GitHub. Încărcăm lista de rezervă...");
             await loadFallbackData();
             return;
         }
 
-        // Ordonăm proiectele descrescător după data ultimei actualizări (Cerință Medie)
+        // ordonez proiectele descrescator dupa data ultimei actualizari 
         repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
         allProjects = repos;
         renderProjects(allProjects);
 
     } catch (error) {
-        // Tratarea erorilor prietenoasă (Cerință Medie)
+        // Tratarea erorilor
         displayError("Ups! Nu am putut încărca proiectele momentan. Folosim datele de rezervă.");
         await loadFallbackData();
     } finally {
@@ -53,7 +53,7 @@ async function fetchProjects() {
     }
 }
 
-// Funcția care creează "cardurile" pe ecran (Cerință Obligatorie)
+// Functia care creeaza cardurile pe ecran
 function renderProjects(projects) {
     repoContainer.innerHTML = '';
 
@@ -66,9 +66,9 @@ function renderProjects(projects) {
         const card = document.createElement('div');
         card.className = 'card';
 
-        // Dacă nu ai descriere la proiect pe GitHub, punem un text default
+        // Daca nu ai descriere la proiect pe GitHub, punem un text default
         const description = repo.description ? repo.description : "Fără descriere disponibilă.";
-        // Dacă limbajul nu e detectat, scriem Nespecificat
+        // Daca limbajul nu e detectat, scriem Nespecificat
         const language = repo.language ? repo.language : "Nespecificat";
 
         card.innerHTML = `
@@ -86,13 +86,13 @@ function renderProjects(projects) {
     });
 }
 
-// Funcție pentru afișarea erorilor
+// Functie pt afisarea erorilor
 function displayError(message) {
     errorMessage.textContent = message;
     errorMessage.style.display = 'block';
 }
 
-// Încărcarea datelor din fișierul local JSON (Cerința specială de la baza paginii 1)
+// Incarcarea datelor din fisierul local JSON 
 async function loadFallbackData() {
     try {
         const response = await fetch('fallback.json');
@@ -104,7 +104,7 @@ async function loadFallbackData() {
     }
 }
 
-// Căutare și filtrare în timp real (Cerință Medie)
+// Cautare si filtrare in timp real 
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
 
